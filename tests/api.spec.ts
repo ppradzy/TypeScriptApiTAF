@@ -12,9 +12,8 @@ let response: any
 
 test.describe('API tests', () => {
     test('Test GET', async ({request}) => {
-        await test.step('Getting one object', async ()=> {
-            response = await request.get('/objects/7')
-        })
+        await test.step('Getting one object', async () => {
+            response = await request.get('/products/7')})
 
         await test.step('Validate response code', async ()=> {
             expect(response.ok()).toBeTruthy();
@@ -24,7 +23,7 @@ test.describe('API tests', () => {
 
     test('Test2: GET', async ({request}) => {
         await test.step('Test2: Getting one object', async ()=> {
-            response = await request.get('/objects/5')
+            response = await request.get('/products/5')
         })
 
         await test.step('Test2: Validate response code', async ()=> {
@@ -33,5 +32,3 @@ test.describe('API tests', () => {
         })
     })
 })
-
-
