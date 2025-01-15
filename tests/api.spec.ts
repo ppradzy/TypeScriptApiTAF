@@ -11,24 +11,22 @@ test.beforeAll(async () => {
 let response: any
 
 test.describe('API tests', () => {
-    test('Test GET', async ({request}) => {
+    test('Test POST method', async ({request}) => {
         await test.step('Getting one object', async () => {
             response = await request.get('/products/7')})
 
         await test.step('Validate response code', async ()=> {
             expect(response.ok()).toBeTruthy();
-            console.log(await response.json());
         })
     })
 
-    test('Test2: GET', async ({request}) => {
-        await test.step('Test2: Getting one object', async ()=> {
+    test('Test GET method', async ({request}) => {
+        await test.step('Getting one object', async ()=> {
             response = await request.get('/products/5')
         })
 
-        await test.step('Test2: Validate response code', async ()=> {
+        await test.step('Validate response code', async ()=> {
             expect(response.ok()).toBeTruthy();
-            console.log(await response.json());
         })
 
         await test.step('Validate content', async ()=> {
