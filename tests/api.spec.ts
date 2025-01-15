@@ -30,5 +30,11 @@ test.describe('API tests', () => {
             expect(response.ok()).toBeTruthy();
             console.log(await response.json());
         })
+
+        await test.step('Validate content', async ()=> {
+            const content = await response.json()
+            expect(content.id).toBe(5)
+            expect(content.title).toBe('Red Nail Polish')
+        })
     })
 })
